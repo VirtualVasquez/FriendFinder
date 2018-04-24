@@ -148,7 +148,8 @@
 			<option value="5">5 (Strongly Agree)</option>		
 		</select>
 
-		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit">
+		<button type="submit" class="btn btn-primary btn-lg btn-block" id="submit"
+		data-toggle="modal" data-target="#results-modal">
 			<i class="glyphicon glyphicon-ok-sign">
 			</i>
 			Submit
@@ -175,7 +176,7 @@
         </div>
         <div class="modal-body">
           <h2 id="match-name"></h2>
-          <img id="match-img" src="https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg" alt="">
+          <img id="match-img" src="http://hanassets.nd.gov/images/product/test.png" alt="">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -184,30 +185,29 @@
 
     </div>
 
-<!-- Jquery scripting -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <script>
 	$('#submit').on('click', function() {
 			var newSubmission = {
-				name: $('#name'),
-				photo: $('#photo'),
-				scores: [
-				a1: $('#q1'),
-				a2: $('#q2'),
-				a3: $('#q3'),
-				a4: $('#q4'),
-				a5: $('#q5'),
-				a6: $('#q6'),
-				a7: $('#q7'),
-				a8: $('#q8'),
-				a9: $('#q9'),
-				a10: $('#q10'),
-				]
+				name: $('#name').val().trim(),
+				photo: $('#photo').val().trim(),
+				scores: {
+				a1: $('#q1').val().trim(),
+				a2: $('#q2').val().trim(),
+				a3: $('#q3').val().trim(),
+				a4: $('#q4').val().trim(),
+				a5: $('#q5').val().trim(),
+				a6: $('#q6').val().trim(),
+				a7: $('#q7').val().trim(),
+				a8: $('#q8').val().trim(),
+				a9: $('#q9').val().trim(),
+				a10: $('#q10').val().trim(),
+				}
 			}
-	$.post(currentURL + "api/friends", newSubmission,
-		function (data) {})
-		})
+	})
+	// $.post("/api/friends", newSubmission,
+	// 	function (data) {})
+	// 	})
 </script>
  
  </div>
