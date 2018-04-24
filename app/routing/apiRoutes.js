@@ -4,7 +4,7 @@
 // These data sources hold arrays of information on table-data, waitinglist, etc.
 // ===============================================================================
 
-var friendsData = require("../data/tableData");
+var friendsData = require("../data/friends");
 
 module.exports = function(app) {
   // API GET Request
@@ -49,3 +49,5 @@ app.post("/api/friends", function(req, res) {
   addTable(newFriend.a1, newFriend.a2, newFriend.a3, newFriend.a4, newFriend.a5, newFriend.a6, newFriend.a7, newFriend.a8, newFriend.a9, newFriend.a10);
   res.json(newFriend);
 });
+
+}

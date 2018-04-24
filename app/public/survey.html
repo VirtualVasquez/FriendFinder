@@ -184,32 +184,48 @@
       </div>
 
     </div>
-
-
-<script>
-	$('#submit').on('click', function() {
-			var newSubmission = {
-				name: $('#name').val().trim(),
-				photo: $('#photo').val().trim(),
-				scores: {
-				a1: $('#q1').val().trim(),
-				a2: $('#q2').val().trim(),
-				a3: $('#q3').val().trim(),
-				a4: $('#q4').val().trim(),
-				a5: $('#q5').val().trim(),
-				a6: $('#q6').val().trim(),
-				a7: $('#q7').val().trim(),
-				a8: $('#q8').val().trim(),
-				a9: $('#q9').val().trim(),
-				a10: $('#q10').val().trim(),
-				}
-			}
-	})
-	// $.post("/api/friends", newSubmission,
-	// 	function (data) {})
-	// 	})
-</script>
  
  </div>
 </body>
 </html>
+
+<script type="text/javascript">
+
+	$('#submit').on("click", function(event) {
+		event.preventDefault();
+
+			var newSubmission = {
+				name: $('#name').val().trim(),
+				photo: $('#photo').val().trim(),
+				scores: [
+				$('#q1').val().trim(),
+				$('#q2').val().trim(),
+				$('#q3').val().trim(),
+				$('#q4').val().trim(),
+				$('#q5').val().trim(),
+				$('#q6').val().trim(),
+				$('#q7').val().trim(),
+				$('#q8').val().trim(),
+				$('#q9').val().trim(),
+				$('#q10').val().trim(),
+				]
+			};
+
+			console.log(newSubmission);
+
+			// $.post("/api/friends", newSubmission, function(data){
+			// 	$("#name").val("");
+			// 	$("#photo").val("");
+			// 	$("#q1").val("");
+			// 	$("#q2").val("");
+			// 	$("#q3").val("");
+			// 	$("#q4").val("");
+			// 	$("#q5").val("");
+			// 	$("#q6").val("");
+			// 	$("#q7").val("");
+			// 	$("#q8").val("");
+			// 	$("#q9").val("");
+			// 	$("#q10").val("");
+			// });
+	});
+</script>

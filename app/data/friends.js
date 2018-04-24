@@ -1,36 +1,120 @@
-// 5. You should save your application's data inside of `app/data/friends.js` as an array of objects. Each of these objects should roughly follow the format below.
+var friendsArray = [
+	{
+		"name": "Robert Downy Jr.",
+		"photo": "https://i.pinimg.com/736x/d4/ea/86/d4ea864374567993be2d39bd765e5dfb--robert-downey-jr-iron-man-robert-downey-jr.jpg",
+		"scores":[
+			1,
+			5,
+			3,
+			5,
+			5,
+			5,
+			1,
+			3,
+			5,
+			1,
+		]
 
-// ```json
-// {
-//   "name":"Ahmed",
-//   "photo":"https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
-//   "scores":[
-//       5,
-//       1,
-//       4,
-//       4,
-//       5,
-//       1,
-//       2,
-//       5,
-//       4,
-//       1
-//     ]
-// }
-// ```
+	},
+		{
+		"name": "Chris Evans",
+		"photo": "https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fimages.hellogiggles.com%2Fuploads%2F2016%2F05%2F09041139%2FChris-Evans.jpg&w=700&q=85",
+		"scores":[
+			5,
+			5,
+			5,
+			4,
+			1,
+			3,
+			5,
+			5,
+			2,
+			3,
+		]
 
-// 6. Determine the user's most compatible friend using the following as a guide:
+	},
+		{
+		"name": "Scarlett Johansen",
+		"photo": "http://cdn02.cdn.justjared.com/wp-content/uploads/headlines/2017/04/scarlett-johansson-invites-grandma-who-looks-like-her.jpg",
+		"scores":[
+			3,
+			5,
+			5,
+			2,
+			5,
+			5,
+			5,
+			5,
+			5,
+			1,
+		]
 
-//    * Convert each user's results into a simple array of numbers (ex: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`).
-//    * With that done, compare the difference between current user's scores against those from other users, question by question. Add up the differences to calculate the `totalDifference`.
-//      * Example: 
-//        * User 1: `[5, 1, 4, 4, 5, 1, 2, 5, 4, 1]`
-//        * User 2: `[3, 2, 6, 4, 5, 1, 2, 5, 4, 1]`
-//        * Total Difference: **2 + 1 + 2 =** **_5_**
-//    * Remember to use the absolute value of the differences. Put another way: no negative solutions! Your app should calculate both `5-3` and `3-5` as `2`, and so on. 
-//    * The closest match will be the user with the least amount of difference.
+	},
+		{
+		"name": "Gwenyth Paltrow",
+		"photo": "http://cdn-img.instyle.com/sites/default/files/styles/320x384/public/images/2017/08/083017-gwyneth-paltrow.jpg?itok=7i__sZlL",
+		"scores":[
+			5,
+			2,
+			5,
+			2,
+			4,
+			5,
+			3,
+			5,
+			3,
+			3,
+		]
 
-// 7. Once you've found the current user's most compatible friend, display the result as a modal pop-up.
-//    * The modal should display both the name and picture of the closest match. 
+	},
+		{
+		"name": "Mark Ruffalo",
+		"photo": "https://ia.media-imdb.com/images/M/MV5BNDQyNzMzZTMtYjlkNS00YzFhLWFhMTctY2M4YmQ1NmRhODBkXkEyXkFqcGdeQXVyNjcyNzgyOTE@._V1_UY317_CR20,0,214,317_AL_.jpg",
+		"scores":[
+			1,
+			3,
+			5,
+			1,
+			2,
+			4,
+			4,
+			1,
+			1,
+			5,
+		]
 
-// // - - -
+	},
+		{
+		"name": "Samuel L. Jackson",
+		"photo": "https://www.bleedingcool.com/wp-content/uploads/2017/03/NickFury-600x300.jpg",
+		"scores":[
+			5,
+			2,
+			5,
+			1,
+			1,
+			5,
+			5,
+			1,
+			3,
+			1,
+		]
+
+	},
+		{
+		"name": "Zoe Saldana",
+		"photo": "https://pbs.twimg.com/profile_images/976950999653924865/pVnzE4fG_400x400.jpg",
+		"scores":[
+			1,
+			5,
+			5,
+			3,
+			3,
+			3,
+			4,
+			3,
+			4,
+			5,
+		]
+	}
+]
