@@ -54,27 +54,3 @@ app.post("/api/friends", function(req, res) {
 });
 
 }
-// function Friend(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10){
-// 	this.a1 = a1;
-// 	this.a2 = a2;
-// 	this.a3 = a3;
-// 	this.a4 = a4;
-// 	this.a5 = a5;
-// 	this.a6 = a6;
-// 	this.a7 = a7;
-// 	this.a8 = a8;
-// 	this.a9 = a9;
-// 	this.a10 = a10;
-// }
-
-// function addFriend(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10){
-//   var Friend = new Friend(a1, a2, a3, a4, a5, a6, a7, a8, a9, a10);
-// }
-
-// app.post("/api/friends", function(req, res) {
-//   var userInput = req.body;
-//   console.log(req.body);
-//   addTable(userInput.a1, userInput.a2, userInput.a3, userInput.a4, userInput.a5, userInput.a6, userInput.a7, userInput.a8, userInput.a9, userInput.a10);
-//   res.json(userInput);
-// });
-
