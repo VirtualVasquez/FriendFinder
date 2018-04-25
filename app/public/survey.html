@@ -2,10 +2,15 @@
 <html>
 <head>
 	<title>FriendFinder</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery.js"></script>
-	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
-	crossorigin="anonymous"></script>
+<!-- 	<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" 
+	crossorigin="anonymous"></script>	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+	<!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 	<div class="container">
@@ -158,9 +163,9 @@
 		<footer class="footer">
 		<div class="container">
 			<p>
-				<a href="">API Friends List</a>
+				<a href="/api/friends">API Friends List</a>
 				 | 
-				<a href="">GitHub Repo</a>
+				<a href="https://github.com/VirtualVasquez/FriendFinder">GitHub Repo</a>
 		
 	</footer>
 
@@ -194,7 +199,7 @@
 	$('#submit').on("click", function(event) {
 		event.preventDefault();
 
-			var newSubmission = {
+			var userInput = {
 				name: $('#name').val().trim(),
 				photo: $('#photo').val().trim(),
 				scores: [
@@ -211,21 +216,17 @@
 				]
 			};
 
-			console.log(newSubmission);
+			console.log(userInput);
 
-			// $.post("/api/friends", newSubmission, function(data){
-			// 	$("#name").val("");
-			// 	$("#photo").val("");
-			// 	$("#q1").val("");
-			// 	$("#q2").val("");
-			// 	$("#q3").val("");
-			// 	$("#q4").val("");
-			// 	$("#q5").val("");
-			// 	$("#q6").val("");
-			// 	$("#q7").val("");
-			// 	$("#q8").val("");
-			// 	$("#q9").val("");
-			// 	$("#q10").val("");
-			// });
+
+			//add user inputs to friends list.THEN
+			$.post("/api/friends", userInput).done(function(data){
+				//THEN push matched friend names and image to modal
+				$('#match-name').html(data.matchName);
+				$('#match-img').attr("src",  data.matchImage);
+			});
+
+			//Opren the modal dialog
+			$('#results-modal').modal('open');
 	});
 </script>
